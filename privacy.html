@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LumiGeo - Privacy Policy</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0b0f19;
+                --card-bg: #111827;
+                --text-color: #f3f4f6;
+                --text-muted: #9ca3af;
+                --primary: #3b82f6;
+                --primary-hover: #60a5fa;
+                --border: #1f2937;
+                --badge-bg: #1e293b;
+                --badge-text: #60a5fa;
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0 24px;
+        }
+        .back-nav {
+            margin-bottom: 16px;
+        }
+        .logo-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+        }
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        .lang-switch {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+        .lang-btn.active {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+        }
+        h2:first-of-type { margin-top: 0; }
+        p { margin-bottom: 14px; }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 14px;
+        }
+        li { margin-bottom: 6px; }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover { text-decoration: underline; }
+        footer {
+            text-align: center;
+            padding: 30px 0 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="back-nav"><a href="index.html">← Support Home</a></div>
+            <div class="logo-badge">LumiGeo</div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle" id="last-updated">最終改定日: 2026年9月8日</p>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
+                <button class="lang-btn" onclick="setLang('en')">English</button>
+            </div>
+        </header>
+
+        <!-- Japanese Version -->
+        <div id="content-ja">
+            <div class="card">
+                <h2>1. 基本方針</h2>
+                <p>LumiGeo（以下、「当アプリ」）は、ユーザーのプライバシーの保護を最重要事項として位置付けています。当アプリは、ユーザーの明示的な同意なしに個人情報を収集・追跡・販売・外部送信することはありません。</p>
+
+                <h2>2. 取得する情報とその利用目的</h2>
+                <p>当アプリは以下の端末機能およびデータにアクセスします：</p>
+                <ul>
+                    <li><strong>位置情報（GPS座標）:</strong>
+                        <br>当アプリが起動中およびバックグラウンド実行中に、高精度なGPS位置情報（緯度・経度・高度・時刻）を取得します。
+                        <br><strong>利用目的:</strong> Bluetooth Low Energy（BLE）を介して、ペアリングされたユーザーの Panasonic LUMIX カメラへ直接送信し、撮影された写真にジオタグ（位置情報）を付与するためだけに使用されます。
+                    </li>
+                    <li><strong>Bluetooth 通信:</strong>
+                        <br>LUMIX カメラと暗号化されたワイヤレス接続を維持し、位置情報パケットを送信するために使用します。
+                    </li>
+                    <li><strong>ローカルネットワーク（Wi-Fi）通信:</strong>
+                        <br>一部のカメラ機種（S1シリーズ等）の初回ペアリング時に、カメラのWi-Fi APへ直接通信して登録認証を完了するためにのみ使用します。インターネット通信には一切使用されません。
+                    </li>
+                </ul>
+
+                <h2>3. 外部サーバーへの送信・保管の有無</h2>
+                <p>当アプリで取得された位置情報およびカメラの識別情報（UUID等）は、<strong>すべて iPhone とカメラの間の直接通信のみで処理されます。</strong></p>
+                <ul>
+                    <li>開発者のサーバー、クラウドサーバー、外部データベース等への位置情報の送信・蓄積は<strong>一切行いません</strong>。</li>
+                    <li>位置情報はメモリ上でのみ処理され、端末ストレージ内に移動ログや軌跡データとして保存されることもありません。</li>
+                </ul>
+
+                <h2>4. サードパーティ製 SDK・広告・トラッキング</h2>
+                <ul>
+                    <li>当アプリには、広告配信 SDK、行動分析・アナリティクスツール（Google Analytics, Firebase 等）、クラッシュ解析ツールなどのサードパーティ製ライブラリは<strong>一切組み込まれていません</strong>。</li>
+                    <li>広告識別子（IDFA）の取得や、他社アプリをまたいだユーザーの追跡（トラッキング）は行いません。</li>
+                </ul>
+
+                <h2>5. データの管理と削除</h2>
+                <p>カメラの登録情報（Bluetooth識別子およびユーザーが設定したカスタム表示名）は、端末内のローカルストレージ（UserDefaults）にのみ安全に保存されます。</p>
+                <p>これらの登録情報は、アプリ内の設定画面にある「すべてのカメラ登録をリセット」からいつでも完全に削除できます。また、アプリをアンインストールすることで端末からすべて消去されます。</p>
+
+                <h2>6. 権限の変更</h2>
+                <p>ユーザーはいつでも iOS の「設定」>「プライバシーとセキュリティ」>「位置情報サービス」および「Bluetooth」から、当アプリへのアクセス権限を変更または無効化できます。</p>
+
+                <h2>7. お問い合わせ</h2>
+                <p>プライバシーポリシーに関するご質問やお問い合わせは、以下のサポート窓口よりご連絡ください：</p>
+                <p><a href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank">LumiGeo Support (GitHub Issues)</a></p>
+            </div>
+        </div>
+
+        <!-- English Version -->
+        <div id="content-en" style="display: none;">
+            <div class="card">
+                <h2>1. Overview</h2>
+                <p>LumiGeo ("the App") is committed to protecting your privacy. The App does not collect, track, sell, or transmit any personal information to external parties or servers without your explicit permission.</p>
+
+                <h2>2. Information Accessed and Purpose of Use</h2>
+                <p>The App requires access to the following device capabilities solely to provide its core service:</p>
+                <ul>
+                    <li><strong>Location Data (Precise GPS):</strong>
+                        <br>The App accesses precise GPS location data (latitude, longitude, altitude, and timestamp) while running in the foreground and background.
+                        <br><strong>Purpose:</strong> Used exclusively to transmit GPS coordinates directly to your paired Panasonic LUMIX camera via Bluetooth Low Energy (BLE) so that your photographs can be accurately geotagged.
+                    </li>
+                    <li><strong>Bluetooth Communication:</strong>
+                        <br>Used to maintain a direct, continuous wireless connection with your camera to transmit location coordinates.
+                    </li>
+                    <li><strong>Local Network (Wi-Fi):</strong>
+                        <br>Used solely during the initial pairing process for certain camera models (such as the S1 series) to authenticate directly with the camera's local Wi-Fi. It is never used to communicate over the public internet.
+                    </li>
+                </ul>
+
+                <h2>3. Data Transmission and Storage</h2>
+                <p>All location coordinates and camera identifiers are processed <strong>strictly locally between your iPhone and your camera.</strong></p>
+                <ul>
+                    <li>No location data or personal identifiers are ever uploaded, collected, or stored on developer servers, cloud services, or external databases.</li>
+                    <li>GPS coordinates are handled transiently in memory and are discarded immediately after transmission to your camera. No historical track logs are recorded to disk.</li>
+                </ul>
+
+                <h2>4. Third-Party Analytics and Advertising</h2>
+                <ul>
+                    <li>The App contains <strong>no advertising SDKs, no tracking frameworks, and no third-party analytics services</strong> (such as Firebase or Google Analytics).</li>
+                    <li>The App does not access the Advertising Identifier (IDFA) and never tracks users across other apps or websites.</li>
+                </ul>
+
+                <h2>5. Data Retention and Deletion</h2>
+                <p>Pairing metadata (camera Bluetooth UUIDs and user-customized labels) is stored locally on your device in standard iOS UserDefaults.</p>
+                <p>You can remove this data at any time via the "Reset All Camera Pairings" button inside the App's Settings, or simply by uninstalling the App from your device.</p>
+
+                <h2>6. Revoking Permissions</h2>
+                <p>You may change or revoke location and Bluetooth permissions at any time via iOS Settings &gt; Privacy &amp; Security &gt; Location Services / Bluetooth.</p>
+
+                <h2>7. Contact Information</h2>
+                <p>If you have any questions regarding this Privacy Policy, please contact us at:</p>
+                <p><a href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank">LumiGeo Support (GitHub Issues)</a></p>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Disclaimer:</strong> LUMIX and Panasonic are trademarks or registered trademarks of Panasonic Holdings Corporation.<br>LumiGeo is an independent third-party tool and is not affiliated with, endorsed, or sponsored by Panasonic.</p>
+            <p style="margin-top: 8px;">&copy; 2026 LumiGeo. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            const jaContent = document.getElementById('content-ja');
+            const enContent = document.getElementById('content-en');
+            const lastUpdated = document.getElementById('last-updated');
+            const buttons = document.querySelectorAll('.lang-btn');
+
+            if (lang === 'ja') {
+                jaContent.style.display = 'block';
+                enContent.style.display = 'none';
+                lastUpdated.textContent = '最終改定日: 2026年9月8日';
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                jaContent.style.display = 'none';
+                enContent.style.display = 'block';
+                lastUpdated.textContent = 'Last updated: September 8, 2026';
+                buttons[0].classList.remove('active');
+                buttons[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

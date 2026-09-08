@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LumiGeo - Support & Documentation</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0b0f19;
+                --card-bg: #111827;
+                --text-color: #f3f4f6;
+                --text-muted: #9ca3af;
+                --primary: #3b82f6;
+                --primary-hover: #60a5fa;
+                --border: #1f2937;
+                --badge-bg: #1e293b;
+                --badge-text: #60a5fa;
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+        }
+        .logo-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+        }
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+        }
+        .lang-switch {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+        .lang-btn.active {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        h2 {
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        h3 {
+            font-size: 1.05rem;
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+        li { margin-bottom: 6px; }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover { text-decoration: underline; }
+        .btn-link {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 8px;
+            text-decoration: none;
+        }
+        .btn-link:hover {
+            background-color: var(--primary-hover);
+            text-decoration: none;
+        }
+        .faq-item {
+            margin-bottom: 16px;
+        }
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-badge">LumiGeo</div>
+            <h1>LumiGeo Support</h1>
+            <p class="subtitle" id="tagline">Panasonic LUMIX カメラ GPS ジオタグ自動同期アプリ</p>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
+                <button class="lang-btn" onclick="setLang('en')">English</button>
+            </div>
+        </header>
+
+        <!-- Japanese Content -->
+        <div id="content-ja">
+            <div class="card">
+                <h2>アプリ概要</h2>
+                <p>LumiGeo（ルミジオ）は、Panasonic LUMIX カメラ（S1 / S9 / L10 等）をお持ちのフォトグラファーのための、常時BLE接続・高精度GPS位置情報自動同期 iOS アプリケーションです。</p>
+                <p style="margin-top: 8px;">iPhoneをポケットに入れたまま、カメラの電源を入れるだけで自動再接続し、撮影写真に正確な位置情報をリアルタイムで記録します。</p>
+            </div>
+
+            <div class="card">
+                <h2>サポート・お問い合わせ</h2>
+                <p>アプリの不具合報告、ご要望、使い方に関するご質問は、GitHub の Issues ページより受け付けております。</p>
+                <div style="margin-top: 16px;">
+                    <a class="btn-link" href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank">Issues で質問・要望・不具合を報告</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>よくあるご質問 (FAQ)</h2>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 対応しているカメラの機種は？</div>
+                    <div class="faq-answer">Panasonic LUMIX S1（LUMIX Sync 対応機）、LUMIX S9、および LUMIX L10（LUMIX Lab 対応機）で動作確認済みです。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. iPhoneの画面が消えていても再接続されますか？</div>
+                    <div class="faq-answer">はい。iOSのCoreBluetoothバックグラウンド処理により、iPhoneがスリープ状態でもカメラの電源が入ると自動的にBluetooth再接続し、位置情報の送信を再開します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. 位置情報の権限は「常に許可」が必要ですか？</div>
+                    <div class="faq-answer">iPhoneがポケットやバッグに入っている（画面消灯・バックグラウンド）間もカメラにGPSを送信し続けるため、位置情報権限は「常に許可」を設定してください。</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>プライバシーポリシー</h2>
+                <p>LumiGeo はユーザーのプライバシーを最優先に尊重しています。位置情報を含むいかなる個人データも、外部サーバーや第三者へ送信・収集・共有されることはありません。</p>
+                <p style="margin-top: 12px;"><a href="privacy.html">👉 プライバシーポリシーの詳細はこちら</a></p>
+            </div>
+        </div>
+
+        <!-- English Content -->
+        <div id="content-en" style="display: none;">
+            <div class="card">
+                <h2>About LumiGeo</h2>
+                <p>LumiGeo is an iOS utility app designed for photographers using Panasonic LUMIX cameras (including S1, S9, and L10), providing seamless Bluetooth Low Energy (BLE) background reconnection and accurate real-time GPS location synchronization.</p>
+                <p style="margin-top: 8px;">Keep your iPhone in your pocket or backpack; as soon as you switch on your camera, LumiGeo automatically connects and supplies precise geotags to your photos.</p>
+            </div>
+
+            <div class="card">
+                <h2>Support & Feedback</h2>
+                <p>If you encounter any issues, have feature suggestions, or need assistance, please submit an issue on our GitHub Support page:</p>
+                <div style="margin-top: 16px;">
+                    <a class="btn-link" href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank">Open an Issue on GitHub</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Which camera models are supported?</div>
+                    <div class="faq-answer">Tested and verified with Panasonic LUMIX S1 (LUMIX Sync protocol), LUMIX S9, and LUMIX L10 (LUMIX Lab protocol).</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Does it reconnect while iPhone is locked in my pocket?</div>
+                    <div class="faq-answer">Yes. Utilizing iOS CoreBluetooth background restoration, LumiGeo wakes up and reconnects whenever you turn on your camera.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q. Why is "Always Allow" location permission required?</div>
+                    <div class="faq-answer">To continuously supply accurate GPS coordinates while your iPhone is sleeping in your pocket during a photo walk or shoot.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Privacy Policy</h2>
+                <p>LumiGeo strictly respects your privacy. All location data and device identifiers remain strictly local between your iPhone and camera. No data is collected, stored, or sent to external servers.</p>
+                <p style="margin-top: 12px;"><a href="privacy.html">👉 Read the full Privacy Policy</a></p>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Disclaimer:</strong> LUMIX and Panasonic are trademarks or registered trademarks of Panasonic Holdings Corporation.<br>LumiGeo is an independent third-party tool and is not affiliated with, endorsed, or sponsored by Panasonic.</p>
+            <p style="margin-top: 8px;">&copy; 2026 LumiGeo. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            const jaContent = document.getElementById('content-ja');
+            const enContent = document.getElementById('content-en');
+            const tagline = document.getElementById('tagline');
+            const buttons = document.querySelectorAll('.lang-btn');
+
+            if (lang === 'ja') {
+                jaContent.style.display = 'block';
+                enContent.style.display = 'none';
+                tagline.textContent = 'Panasonic LUMIX カメラ GPS ジオタグ自動同期アプリ';
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                jaContent.style.display = 'none';
+                enContent.style.display = 'block';
+                tagline.textContent = 'LUMIX Camera GPS Geotagging Companion App';
+                buttons[0].classList.remove('active');
+                buttons[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
