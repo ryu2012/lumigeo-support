@@ -1,0 +1,29 @@
+{
+  "name": "LumiGeo",
+  "identifier": "com.lumigeo.source",
+  "subtitle": "Panasonic LUMIX Geotagging & Sync",
+  "description": "AltStore source for LumiGeo - continuous GPS sync and geotagging for Panasonic LUMIX cameras.",
+  "iconURL": "https://ryu2012.github.io/lumigeo-support/icon.png",
+  "website": "https://ryu2012.github.io/lumigeo-support/",
+  "apps": [
+    {
+      "name": "LumiGeo",
+      "bundleIdentifier": "com.hanzawaryo.LumiGeo",
+      "developerName": "LumiGeo Team",
+      "subtitle": "LUMIX Camera Geotagging & Sync",
+      "localizedDescription": "LumiGeo connects to your Panasonic LUMIX camera (S1, S9, etc.) over Bluetooth and continuously syncs GPS location in the background.",
+      "iconURL": "https://ryu2012.github.io/lumigeo-support/icon.png",
+      "tintColor": "007AFF",
+      "versions": [
+        {
+          "version": "1.1.0",
+          "date": "2026-10-09",
+          "size": 2407598,
+          "downloadURL": "https://github.com/ryu2012/lumigeo-support/releases/download/v1.1.0/LumiGeo.ipa",
+          "localizedDescription": "Initial release via AltStore with automatic background re-pairing and enhanced Bluetooth sync.",
+          "sha256": "d618cfe8d749ee437e49b89053323305312a60e84fc8a77b9590c49feccea64f"
+        }
+      ]
+    }
+  ]
+}
