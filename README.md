@@ -10,7 +10,6 @@
 </p>
 
 <p align="center">
-  <a href="https://ryu2012.github.io/lumigeo-support/">Web Support & FAQ</a> •
   <a href="https://ryu2012.github.io/lumigeo-support/privacy.html">Privacy Policy</a> •
   <a href="https://github.com/ryu2012/lumigeo-support/issues">Issues / Feedback</a>
 </p>
@@ -60,9 +59,8 @@ Keep your iPhone in your pocket or camera bag; simply turn on your camera, and L
 ---
 
 ## リンク / Links
-- **サポート & よくあるご質問 (FAQ)**: [https://ryu2012.github.io/lumigeo-support/](https://ryu2012.github.io/lumigeo-support/)
 - **プライバシーポリシー (Privacy Policy)**: [https://ryu2012.github.io/lumigeo-support/privacy.html](https://ryu2012.github.io/lumigeo-support/privacy.html)
-- **不具合報告・ご要望 (Bug Reports & Feedback)**: [GitHub Issues](https://github.com/ryu2012/lumigeo-support/issues)
+- **不具合報告・ご要望・お問い合わせ (Issues & Contact)**: [GitHub Issues](https://github.com/ryu2012/lumigeo-support/issues)
 
 ---
 
