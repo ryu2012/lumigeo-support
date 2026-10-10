@@ -14,6 +14,22 @@
   <a href="https://github.com/ryu2012/lumigeo-support/issues">Issues / Feedback</a>
 </p>
 
+<p align="center">
+  <a href="altstore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/download-badge-altstore-dark.png">
+      <img src="assets/download-badge-altstore-light.png" height="44" alt="Download on AltStore">
+    </picture>
+  </a>
+  &nbsp;&nbsp;
+  <a href="sidestore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/add-source-to-sidestore-white.svg">
+      <img src="assets/add-source-to-sidestore.svg" height="44" alt="Add Source to SideStore">
+    </picture>
+  </a>
+</p>
+
 ---
 
 ## 🇯🇵 日本語 (Japanese)
@@ -22,6 +38,13 @@
 **LumiGeo（ルミジオ）** は、Panasonic LUMIX カメラをお使いのフォトグラファーのための、常時 Bluetooth Low Energy (BLE) バックグラウンド接続・高精度 GPS 位置情報自動同期 iOS アプリケーションです。
 
 iPhone をポケットやバッグに入れたまま、カメラの電源を入れるだけで自動的に再接続し、撮影写真へリアルタイムに正確な位置情報を記録します。
+
+### インストール方法 (AltStore / SideStore)
+1. iOS 端末から上記バッジをタップするか、AltStore / SideStore の「Sources」タブを開いて「＋」ボタンから以下の URL を追加します：
+   ```
+   https://ryu2012.github.io/lumigeo-support/apps.json
+   ```
+2. ソース一覧に追加された「LumiGeo」を選択してインストールしてください。
 
 ### 主な特徴
 - **自動再接続 & バックグラウンド同期**:
@@ -43,6 +66,13 @@ iPhone をポケットやバッグに入れたまま、カメラの電源を入�
 **LumiGeo** is an iOS utility app tailored for photographers using Panasonic LUMIX cameras, offering seamless Bluetooth Low Energy (BLE) background reconnection and precise real-time GPS location synchronization.
 
 Keep your iPhone in your pocket or camera bag; simply turn on your camera, and LumiGeo automatically connects and writes accurate geotags to your photos.
+
+### Installation (AltStore / SideStore)
+1. Tap the badge above on your iOS device, or open AltStore / SideStore, navigate to **Sources**, and tap **+** to add this repository:
+   ```
+   https://ryu2012.github.io/lumigeo-support/apps.json
+   ```
+2. Locate **LumiGeo** in the sources list and tap Install.
 
 ### Key Features
 - **Automatic Background Reconnection**:

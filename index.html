@@ -186,6 +186,94 @@
             background-color: var(--primary-hover);
             text-decoration: none;
         }
+        .install-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+            margin: 20px 0 16px;
+        }
+        .badge-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 12px;
+            min-height: 48px;
+            transition: transform 0.15s ease, opacity 0.15s ease;
+        }
+        .badge-link:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        .badge-img {
+            height: 48px;
+            width: auto;
+            display: block;
+            border-radius: 10px;
+        }
+        .source-box {
+            margin-top: 18px;
+            background-color: var(--feature-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .source-box-label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+        .source-input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: stretch;
+        }
+        .source-input {
+            flex: 1 1 280px;
+            min-height: 44px;
+            padding: 10px 14px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.95rem;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        .copy-btn {
+            min-height: 44px;
+            min-width: 96px;
+            padding: 10px 18px;
+            background-color: var(--primary);
+            color: #ffffff;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        @media (prefers-color-scheme: dark) {
+            .copy-btn {
+                color: #0f172a;
+            }
+        }
+        .copy-btn:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+        .install-guide-list {
+            margin-top: 16px;
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
         .faq-item {
             margin-bottom: 20px;
         }
@@ -269,6 +357,41 @@
                 </ul>
             </section>
 
+            <section class="card" aria-labelledby="heading-install-ja">
+                <h2 id="heading-install-ja">インストール (AltStore / SideStore)</h2>
+                <p>LumiGeo は、AltStore または SideStore を経由して iOS 端末に直接インストールできます。</p>
+                <p style="margin-top: 6px;">iPhone の Safari などから以下の公式バッジをタップすると、各アプリが起動してソース追加シートが開きます。</p>
+
+                <div class="install-badges">
+                    <a class="badge-link" href="altstore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="AltStore でダウンロード">
+                        <picture>
+                            <source srcset="assets/download-badge-altstore-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="assets/download-badge-altstore-light.png" alt="Download on AltStore" class="badge-img" height="48">
+                        </picture>
+                    </a>
+                    <a class="badge-link" href="sidestore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="SideStore にソースを追加">
+                        <picture>
+                            <source srcset="assets/add-source-to-sidestore-white.svg" media="(prefers-color-scheme: dark)">
+                            <img src="assets/add-source-to-sidestore.svg" alt="Add Source to SideStore" class="badge-img" height="48">
+                        </picture>
+                    </a>
+                </div>
+
+                <div class="source-box">
+                    <label for="source-url-ja" class="source-box-label">手動でソースを追加する場合の URL：</label>
+                    <div class="source-input-group">
+                        <input type="text" id="source-url-ja" class="source-input" value="https://ryu2012.github.io/lumigeo-support/apps.json" readonly>
+                        <button type="button" class="copy-btn" onclick="copySourceUrl('source-url-ja', this)" aria-label="ソース URL をクリップボードにコピー">URL をコピー</button>
+                    </div>
+                </div>
+
+                <ol class="install-guide-list">
+                    <li>AltStore または SideStore アプリの「Sources」タブを開きます。</li>
+                    <li>右上の「＋」ボタンをタップし、上記 URL を追加します。</li>
+                    <li>ソース一覧に追加された「LumiGeo」をタップしてインストールを実行してください。</li>
+                </ol>
+            </section>
+
             <section class="card" aria-labelledby="heading-faq-ja">
                 <h2 id="heading-faq-ja">よくあるご質問 (FAQ)</h2>
                 <div class="faq-item">
@@ -331,6 +454,41 @@
                     <li><strong>LUMIX Sync Protocol</strong>: Panasonic LUMIX S1 (Wi-Fi pairing auth ➡ BLE sync)</li>
                     <li><strong>LUMIX Lab Protocol</strong>: Panasonic LUMIX S9 / LUMIX L10 (Direct BLE sync)</li>
                 </ul>
+            </section>
+
+            <section class="card" aria-labelledby="heading-install-en">
+                <h2 id="heading-install-en">Installation (AltStore / SideStore)</h2>
+                <p>LumiGeo can be installed directly to your iOS device via AltStore or SideStore.</p>
+                <p style="margin-top: 6px;">Tap one of the official badges below from Safari on your iPhone to open the source installation sheet:</p>
+
+                <div class="install-badges">
+                    <a class="badge-link" href="altstore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="Download on AltStore">
+                        <picture>
+                            <source srcset="assets/download-badge-altstore-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="assets/download-badge-altstore-light.png" alt="Download on AltStore" class="badge-img" height="48">
+                        </picture>
+                    </a>
+                    <a class="badge-link" href="sidestore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="Add Source to SideStore">
+                        <picture>
+                            <source srcset="assets/add-source-to-sidestore-white.svg" media="(prefers-color-scheme: dark)">
+                            <img src="assets/add-source-to-sidestore.svg" alt="Add Source to SideStore" class="badge-img" height="48">
+                        </picture>
+                    </a>
+                </div>
+
+                <div class="source-box">
+                    <label for="source-url-en" class="source-box-label">Manual Source Repository URL:</label>
+                    <div class="source-input-group">
+                        <input type="text" id="source-url-en" class="source-input" value="https://ryu2012.github.io/lumigeo-support/apps.json" readonly>
+                        <button type="button" class="copy-btn" onclick="copySourceUrl('source-url-en', this)" aria-label="Copy Source URL to clipboard">Copy URL</button>
+                    </div>
+                </div>
+
+                <ol class="install-guide-list">
+                    <li>Open AltStore or SideStore on your iOS device and navigate to the <strong>Sources</strong> tab.</li>
+                    <li>Tap the <strong>+</strong> button in the top right corner and paste the URL above.</li>
+                    <li>Find <strong>LumiGeo</strong> in the sources list and tap <strong>FREE / Install</strong>.</li>
+                </ol>
             </section>
 
             <section class="card" aria-labelledby="heading-faq-en">
@@ -399,6 +557,35 @@
                 btnJa.setAttribute('aria-pressed', 'false');
                 btnEn.classList.add('active');
                 btnEn.setAttribute('aria-pressed', 'true');
+            }
+        }
+
+        function copySourceUrl(inputId, btn) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+            const textToCopy = input.value;
+            const originalText = btn.textContent;
+            const isJa = document.documentElement.lang === 'ja';
+            const feedbackText = isJa ? 'コピー完了！' : 'Copied!';
+
+            function showSuccess() {
+                btn.textContent = feedbackText;
+                btn.setAttribute('aria-live', 'polite');
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            }
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy).then(showSuccess).catch(() => {
+                    input.select();
+                    document.execCommand('copy');
+                    showSuccess();
+                });
+            } else {
+                input.select();
+                document.execCommand('copy');
+                showSuccess();
             }
         }
     </script>
