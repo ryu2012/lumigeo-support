@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ryu2012.github.io/lumigeo-support/sitemap.xml
