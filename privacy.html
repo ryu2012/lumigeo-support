@@ -9,24 +9,26 @@
             --bg-color: #f8fafc;
             --card-bg: #ffffff;
             --text-color: #0f172a;
-            --text-muted: #64748b;
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --border: #e2e8f0;
+            --text-muted: #475569;
+            --primary: #1d4ed8;
+            --primary-hover: #1e40af;
+            --border: #cbd5e1;
             --badge-bg: #eff6ff;
             --badge-text: #1d4ed8;
+            --focus-ring: #2563eb;
         }
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg-color: #0b0f19;
                 --card-bg: #111827;
-                --text-color: #f3f4f6;
-                --text-muted: #9ca3af;
-                --primary: #3b82f6;
-                --primary-hover: #60a5fa;
-                --border: #1f2937;
+                --text-color: #f8fafc;
+                --text-muted: #94a3b8;
+                --primary: #38bdf8;
+                --primary-hover: #7dd3fc;
+                --border: #334155;
                 --badge-bg: #1e293b;
-                --badge-text: #60a5fa;
+                --badge-text: #38bdf8;
+                --focus-ring: #38bdf8;
             }
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,7 +36,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
             padding: 24px 16px;
         }
         .container {
@@ -43,7 +45,7 @@
         }
         header {
             text-align: center;
-            padding: 40px 0 24px;
+            padding: 30px 0 24px;
         }
         .back-nav {
             margin-bottom: 16px;
@@ -69,53 +71,75 @@
             font-size: 1rem;
         }
         .lang-switch {
-            margin-top: 16px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 12px;
         }
         .lang-btn {
             background: none;
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
             color: var(--text-color);
-            padding: 6px 14px;
-            border-radius: 6px;
+            padding: 10px 20px;
+            min-height: 44px;
+            min-width: 90px;
+            border-radius: 9999px;
             cursor: pointer;
-            font-size: 0.875rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
         }
         .lang-btn.active {
             background-color: var(--primary);
             color: #ffffff;
             border-color: var(--primary);
         }
+        @media (prefers-color-scheme: dark) {
+            .lang-btn.active {
+                color: #0f172a;
+            }
+        }
+        /* DADS Focus Indicator */
+        :focus-visible {
+            outline: 3px solid var(--focus-ring);
+            outline-offset: 3px;
+        }
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 32px;
             margin-bottom: 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
         h2 {
-            font-size: 1.3rem;
-            margin-top: 24px;
-            margin-bottom: 12px;
+            font-size: 1.35rem;
+            margin-top: 28px;
+            margin-bottom: 14px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 6px;
+            padding-bottom: 8px;
         }
         h2:first-of-type { margin-top: 0; }
         p { margin-bottom: 14px; }
         ul {
-            padding-left: 20px;
+            padding-left: 24px;
             margin-bottom: 14px;
         }
         li { margin-bottom: 6px; }
+        /* DADS Link Text Underline Requirement */
         a {
             color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 600;
         }
-        a:hover { text-decoration: underline; }
+        a:hover {
+            color: var(--primary-hover);
+            text-decoration-thickness: 2px;
+        }
         footer {
             text-align: center;
             padding: 30px 0 20px;
@@ -133,9 +157,9 @@
             <div class="logo-badge">LumiGeo</div>
             <h1>Privacy Policy</h1>
             <p class="subtitle" id="last-updated">最終改定日: 2026年9月8日</p>
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
-                <button class="lang-btn" onclick="setLang('en')">English</button>
+            <div class="lang-switch" role="group" aria-label="言語選択 / Language Selection">
+                <button class="lang-btn active" id="btn-ja" aria-pressed="true" onclick="setLang('ja')">日本語</button>
+                <button class="lang-btn" id="btn-en" aria-pressed="false" onclick="setLang('en')">English</button>
             </div>
         </header>
 
@@ -234,8 +258,8 @@
         </div>
 
         <footer>
-            <p><strong>Disclaimer:</strong> LUMIX and Panasonic are trademarks or registered trademarks of Panasonic Holdings Corporation.<br>LumiGeo is an independent third-party tool and is not affiliated with, endorsed, or sponsored by Panasonic.</p>
-            <p style="margin-top: 8px;">&copy; 2026 LumiGeo. All rights reserved.</p>
+            <p><strong>免責事項 / Disclaimer:</strong> LUMIX および Panasonic は、パナソニックホールディングス株式会社の登録商標または商標です。LumiGeo は独立したサードパーティツールであり、パナソニックと提携、承認、支援されているものではありません。<br>Panasonic and LUMIX are registered trademarks of Panasonic Holdings Corporation. LumiGeo is an independent third-party tool and is not affiliated with, endorsed, or sponsored by Panasonic.</p>
+            <p style="margin-top: 10px;">&copy; 2026 LumiGeo Team. All rights reserved.</p>
         </footer>
     </div>
 
@@ -244,20 +268,27 @@
             const jaContent = document.getElementById('content-ja');
             const enContent = document.getElementById('content-en');
             const lastUpdated = document.getElementById('last-updated');
-            const buttons = document.querySelectorAll('.lang-btn');
+            const btnJa = document.getElementById('btn-ja');
+            const btnEn = document.getElementById('btn-en');
 
             if (lang === 'ja') {
                 jaContent.style.display = 'block';
                 enContent.style.display = 'none';
                 lastUpdated.textContent = '最終改定日: 2026年9月8日';
-                buttons[0].classList.add('active');
-                buttons[1].classList.remove('active');
+                document.documentElement.lang = 'ja';
+                btnJa.classList.add('active');
+                btnJa.setAttribute('aria-pressed', 'true');
+                btnEn.classList.remove('active');
+                btnEn.setAttribute('aria-pressed', 'false');
             } else {
                 jaContent.style.display = 'none';
                 enContent.style.display = 'block';
                 lastUpdated.textContent = 'Last updated: September 8, 2026';
-                buttons[0].classList.remove('active');
-                buttons[1].classList.add('active');
+                document.documentElement.lang = 'en';
+                btnJa.classList.remove('active');
+                btnJa.setAttribute('aria-pressed', 'false');
+                btnEn.classList.add('active');
+                btnEn.setAttribute('aria-pressed', 'true');
             }
         }
     </script>

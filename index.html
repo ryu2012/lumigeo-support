@@ -10,26 +10,28 @@
             --bg-color: #f8fafc;
             --card-bg: #ffffff;
             --text-color: #0f172a;
-            --text-muted: #64748b;
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --border: #e2e8f0;
+            --text-muted: #475569;
+            --primary: #1d4ed8;
+            --primary-hover: #1e40af;
+            --border: #cbd5e1;
             --badge-bg: #eff6ff;
             --badge-text: #1d4ed8;
             --feature-bg: #f1f5f9;
+            --focus-ring: #2563eb;
         }
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg-color: #0b0f19;
                 --card-bg: #111827;
-                --text-color: #f3f4f6;
-                --text-muted: #9ca3af;
-                --primary: #3b82f6;
-                --primary-hover: #60a5fa;
-                --border: #1f2937;
+                --text-color: #f8fafc;
+                --text-muted: #94a3b8;
+                --primary: #38bdf8;
+                --primary-hover: #7dd3fc;
+                --border: #334155;
                 --badge-bg: #1e293b;
-                --badge-text: #60a5fa;
-                --feature-bg: #1f2937;
+                --badge-text: #38bdf8;
+                --feature-bg: #1e293b;
+                --focus-ring: #38bdf8;
             }
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,7 +39,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
             padding: 24px 16px;
         }
         .container {
@@ -68,26 +70,41 @@
             margin: 0 auto;
         }
         .lang-switch {
-            margin-top: 18px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
         }
         .lang-btn {
             background: none;
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
             color: var(--text-color);
-            padding: 6px 16px;
+            padding: 10px 20px;
+            min-height: 44px;
+            min-width: 90px;
             border-radius: 9999px;
             cursor: pointer;
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.2s ease;
         }
         .lang-btn.active {
             background-color: var(--primary);
             color: #ffffff;
             border-color: var(--primary);
+        }
+        @media (prefers-color-scheme: dark) {
+            .lang-btn.active {
+                color: #0f172a;
+            }
+        }
+        /* DADS Focus Indicator */
+        :focus-visible {
+            outline: 3px solid var(--focus-ring);
+            outline-offset: 3px;
         }
         .card {
             background-color: var(--card-bg);
@@ -100,16 +117,13 @@
         h2 {
             font-size: 1.35rem;
             margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 10px;
         }
         h3 {
-            font-size: 1.05rem;
-            margin-top: 18px;
-            margin-bottom: 6px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 8px;
         }
         .feature-grid {
             display: grid;
@@ -119,55 +133,89 @@
         }
         .feature-item {
             background-color: var(--feature-bg);
-            padding: 14px 16px;
+            padding: 16px;
             border-radius: 10px;
+            border-left: 4px solid var(--primary);
         }
         .feature-title {
             font-weight: 700;
             margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
         .feature-desc {
-            font-size: 0.925rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
         }
         ul, ol {
-            padding-left: 20px;
+            padding-left: 24px;
             margin-bottom: 12px;
         }
         li { margin-bottom: 6px; }
+        
+        /* DADS Link Text Underline Requirement */
         a {
             color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 600;
         }
-        a:hover { text-decoration: underline; }
+        a:hover {
+            color: var(--primary-hover);
+            text-decoration-thickness: 2px;
+        }
+        
         .btn-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            min-height: 48px;
             background-color: var(--primary);
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
             margin-top: 8px;
             text-decoration: none;
+        }
+        @media (prefers-color-scheme: dark) {
+            .btn-link {
+                color: #0f172a;
+            }
         }
         .btn-link:hover {
             background-color: var(--primary-hover);
             text-decoration: none;
         }
         .faq-item {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
         .faq-question {
-            font-weight: 600;
-            margin-bottom: 4px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
         }
         .faq-answer {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.975rem;
+        }
+        .external-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 4px;
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
         footer {
             text-align: center;
@@ -182,23 +230,23 @@
 <body>
     <div class="container">
         <header>
-            <img src="icon.png" alt="LumiGeo Icon" class="app-icon">
+            <img src="icon.png" alt="LumiGeo アプリアイコン" class="app-icon">
             <h1>LumiGeo</h1>
             <p class="subtitle" id="tagline">Panasonic LUMIX カメラ GPS ジオタグ自動同期 iOS アプリケーション</p>
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
-                <button class="lang-btn" onclick="setLang('en')">English</button>
+            <div class="lang-switch" role="group" aria-label="言語選択 / Language Selection">
+                <button class="lang-btn active" id="btn-ja" aria-pressed="true" onclick="setLang('ja')">日本語</button>
+                <button class="lang-btn" id="btn-en" aria-pressed="false" onclick="setLang('en')">English</button>
             </div>
         </header>
 
         <!-- Japanese Content -->
-        <div id="content-ja">
-            <div class="card">
-                <h2>アプリ概要</h2>
+        <main id="content-ja">
+            <section class="card" aria-labelledby="heading-about-ja">
+                <h2 id="heading-about-ja">アプリ概要</h2>
                 <p><strong>LumiGeo（ルミジオ）</strong> は、Panasonic LUMIX カメラをお使いのフォトグラファーのための、常時 Bluetooth Low Energy (BLE) バックグラウンド接続・高精度 GPS 位置情報自動同期 iOS アプリケーションです。</p>
                 <p style="margin-top: 8px;">iPhone をポケットやバッグに入れたまま、カメラの電源を入れるだけで自動的に再接続し、撮影写真へリアルタイムに正確な位置情報を記録します。</p>
 
-                <h3 style="margin-top: 22px;">主な特徴</h3>
+                <h3>主な特徴</h3>
                 <div class="feature-grid">
                     <div class="feature-item">
                         <div class="feature-title">⚡ 自動再接続 & バックグラウンド同期</div>
@@ -214,15 +262,15 @@
                     </div>
                 </div>
 
-                <h3 style="margin-top: 22px;">動作確認済み機種</h3>
+                <h3>動作確認済み機種</h3>
                 <ul>
                     <li><strong>LUMIX Sync 方式</strong>: Panasonic LUMIX S1（ペアリング時 Wi-Fi 認証 ➡ BLE 同期）</li>
                     <li><strong>LUMIX Lab 方式</strong>: Panasonic LUMIX S9 / LUMIX L10（BLE 直接同期）</li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="card">
-                <h2>よくあるご質問 (FAQ)</h2>
+            <section class="card" aria-labelledby="heading-faq-ja">
+                <h2 id="heading-faq-ja">よくあるご質問 (FAQ)</h2>
                 <div class="faq-item">
                     <div class="faq-question">Q. iPhone の画面が消えていても再接続されますか？</div>
                     <div class="faq-answer">はい。iOS の CoreBluetooth バックグラウンド復帰処理により、iPhone がスリープ状態でもカメラの電源が入ると自動的に Bluetooth 再接続し、位置情報の送信を再開します。</div>
@@ -235,31 +283,34 @@
                     <div class="faq-question">Q. 位置情報などのデータは外部に送信されますか？</div>
                     <div class="faq-answer">いいえ。すべての位置情報および機器情報は端末とカメラの間で完結し、外部サーバーへの通信やデータ収集は一切行われません。</div>
                 </div>
-            </div>
+            </section>
 
-            <div class="card">
-                <h2>サポート・お問い合わせ</h2>
+            <section class="card" aria-labelledby="heading-support-ja">
+                <h2 id="heading-support-ja">サポート・お問い合わせ</h2>
                 <p>アプリの不具合報告、ご要望、使い方に関するご質問は、GitHub の Issues ページより受け付けております。</p>
                 <div style="margin-top: 14px;">
-                    <a class="btn-link" href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank">Issues で質問・要望・不具合を報告</a>
+                    <a class="btn-link" href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank" rel="noopener noreferrer">
+                        <span>Issues で質問・要望・不具合を報告</span>
+                        <svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+                        <span class="sr-only">（新しいタブで開きます）</span>
+                    </a>
                 </div>
-            </div>
+            </section>
 
-            <div class="card">
-                <h2>プライバシーポリシー</h2>
-                <p>LumiGeo はユーザーのプライバシーを最優先に尊重しています。詳細は以下のプライバシーポリシーページをご確認ください。</p>
-                <p style="margin-top: 12px;"><a href="privacy.html">👉 プライバシーポリシーの詳細はこちら</a></p>
-            </div>
-        </div>
+            <section class="card" aria-labelledby="heading-privacy-ja">
+                <h2 id="heading-privacy-ja">プライバシーポリシー</h2>
+                <p>LumiGeo はユーザーのプライバシーを最優先に尊重しています。収集するデータの詳細や利用目的については、<a href="privacy.html">プライバシーポリシー</a>をご確認ください。</p>
+            </section>
+        </main>
 
         <!-- English Content -->
-        <div id="content-en" style="display: none;">
-            <div class="card">
-                <h2>About LumiGeo</h2>
+        <main id="content-en" style="display: none;">
+            <section class="card" aria-labelledby="heading-about-en">
+                <h2 id="heading-about-en">About LumiGeo</h2>
                 <p><strong>LumiGeo</strong> is an iOS utility app tailored for photographers using Panasonic LUMIX cameras, offering seamless Bluetooth Low Energy (BLE) background reconnection and precise real-time GPS location synchronization.</p>
                 <p style="margin-top: 8px;">Keep your iPhone in your pocket or camera bag; simply turn on your camera, and LumiGeo automatically connects and writes accurate geotags to your photos.</p>
 
-                <h3 style="margin-top: 22px;">Key Features</h3>
+                <h3>Key Features</h3>
                 <div class="feature-grid">
                     <div class="feature-item">
                         <div class="feature-title">⚡ Automatic Background Reconnection</div>
@@ -275,15 +326,15 @@
                     </div>
                 </div>
 
-                <h3 style="margin-top: 22px;">Verified Camera Models</h3>
+                <h3>Verified Camera Models</h3>
                 <ul>
                     <li><strong>LUMIX Sync Protocol</strong>: Panasonic LUMIX S1 (Wi-Fi pairing auth ➡ BLE sync)</li>
                     <li><strong>LUMIX Lab Protocol</strong>: Panasonic LUMIX S9 / LUMIX L10 (Direct BLE sync)</li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="card">
-                <h2>Frequently Asked Questions (FAQ)</h2>
+            <section class="card" aria-labelledby="heading-faq-en">
+                <h2 id="heading-faq-en">Frequently Asked Questions (FAQ)</h2>
                 <div class="faq-item">
                     <div class="faq-question">Q. Does it reconnect while iPhone is locked in my pocket?</div>
                     <div class="faq-answer">Yes. Utilizing iOS CoreBluetooth background restoration, LumiGeo wakes up and reconnects whenever you turn on your camera.</div>
@@ -296,22 +347,25 @@
                     <div class="faq-question">Q. Is any location data uploaded to servers?</div>
                     <div class="faq-answer">No. All geolocation data remains strictly local between your iPhone and the camera. No servers or telemetry are involved.</div>
                 </div>
-            </div>
+            </section>
 
-            <div class="card">
-                <h2>Support & Feedback</h2>
+            <section class="card" aria-labelledby="heading-support-en">
+                <h2 id="heading-support-en">Support & Feedback</h2>
                 <p>If you encounter any issues, have feature suggestions, or need assistance, please submit an issue on our GitHub Support page:</p>
                 <div style="margin-top: 14px;">
-                    <a class="btn-link" href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank">Open an Issue on GitHub</a>
+                    <a class="btn-link" href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank" rel="noopener noreferrer">
+                        <span>Open an Issue on GitHub</span>
+                        <svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+                        <span class="sr-only">(Opens in a new tab)</span>
+                    </a>
                 </div>
-            </div>
+            </section>
 
-            <div class="card">
-                <h2>Privacy Policy</h2>
-                <p>LumiGeo strictly respects your privacy. All location data and device identifiers remain strictly local between your iPhone and camera.</p>
-                <p style="margin-top: 12px;"><a href="privacy.html">👉 Read the full Privacy Policy</a></p>
-            </div>
-        </div>
+            <section class="card" aria-labelledby="heading-privacy-en">
+                <h2 id="heading-privacy-en">Privacy Policy</h2>
+                <p>LumiGeo strictly respects your privacy. All location data and device identifiers remain strictly local. Please review our <a href="privacy.html">Privacy Policy</a> for full details.</p>
+            </section>
+        </main>
 
         <footer>
             <p><strong>免責事項 / Disclaimer:</strong> LUMIX および Panasonic は、パナソニックホールディングス株式会社の登録商標または商標です。LumiGeo は独立したサードパーティツールであり、パナソニックと提携、承認、支援されているものではありません。<br>Panasonic and LUMIX are registered trademarks of Panasonic Holdings Corporation. LumiGeo is an independent third-party tool and is not affiliated with, endorsed, or sponsored by Panasonic.</p>
@@ -324,20 +378,27 @@
             const jaContent = document.getElementById('content-ja');
             const enContent = document.getElementById('content-en');
             const tagline = document.getElementById('tagline');
-            const buttons = document.querySelectorAll('.lang-btn');
+            const btnJa = document.getElementById('btn-ja');
+            const btnEn = document.getElementById('btn-en');
 
             if (lang === 'ja') {
                 jaContent.style.display = 'block';
                 enContent.style.display = 'none';
                 tagline.textContent = 'Panasonic LUMIX カメラ GPS ジオタグ自動同期 iOS アプリケーション';
-                buttons[0].classList.add('active');
-                buttons[1].classList.remove('active');
+                document.documentElement.lang = 'ja';
+                btnJa.classList.add('active');
+                btnJa.setAttribute('aria-pressed', 'true');
+                btnEn.classList.remove('active');
+                btnEn.setAttribute('aria-pressed', 'false');
             } else {
                 jaContent.style.display = 'none';
                 enContent.style.display = 'block';
                 tagline.textContent = 'Automatic Background GPS Geotagging & BLE Sync for Panasonic LUMIX Cameras';
-                buttons[0].classList.remove('active');
-                buttons[1].classList.add('active');
+                document.documentElement.lang = 'en';
+                btnJa.classList.remove('active');
+                btnJa.setAttribute('aria-pressed', 'false');
+                btnEn.classList.add('active');
+                btnEn.setAttribute('aria-pressed', 'true');
             }
         }
     </script>
