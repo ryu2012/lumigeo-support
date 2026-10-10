@@ -16,17 +16,11 @@
 
 <p align="center">
   <a href="altstore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/download-badge-altstore-dark.png">
-      <img src="assets/download-badge-altstore-light.png" height="44" alt="Download on AltStore">
-    </picture>
+    <img src="assets/download-badge-altstore-dark.png" height="44" alt="Download on AltStore">
   </a>
   &nbsp;&nbsp;
   <a href="sidestore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/add-source-to-sidestore-white.svg">
-      <img src="assets/add-source-to-sidestore.svg" height="44" alt="Add Source to SideStore">
-    </picture>
+    <img src="assets/add-source-to-sidestore.png" height="44" alt="Add Source to SideStore">
   </a>
 </p>
 
