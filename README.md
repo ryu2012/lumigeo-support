@@ -15,11 +15,11 @@
 </p>
 
 <p align="center">
-  <a href="altstore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json">
+  <a href="https://ryu2012.github.io/lumigeo-support/">
     <img src="assets/download-badge-altstore-dark.png" height="44" alt="Download on AltStore">
   </a>
   &nbsp;&nbsp;
-  <a href="sidestore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json">
+  <a href="https://ryu2012.github.io/lumigeo-support/">
     <img src="assets/add-source-to-sidestore.png" height="44" alt="Add Source to SideStore">
   </a>
 </p>
@@ -34,11 +34,12 @@
 iPhone をポケットやバッグに入れたまま、カメラの電源を入れるだけで自動的に再接続し、撮影写真へリアルタイムに正確な位置情報を記録します。
 
 ### インストール方法 (AltStore / SideStore)
-1. iOS 端末から上記バッジをタップするか、AltStore / SideStore の「Sources」タブを開いて「＋」ボタンから以下の URL を追加します：
+1. **ワンタップ追加**: iPhone の Safari から [LumiGeo 公式サイト](https://ryu2012.github.io/lumigeo-support/) を開き、各バッジをタップすると自動でアプリ起動＆ソース追加画面が開きます。（※ GitHub のセキュリティ仕様上、README からのカスタム URL スキーム直接起動が制限されているため Web サイトを経由します）
+2. **手動でソースを追加**: AltStore または SideStore の「Sources」タブを開き、右上の「＋」ボタンから以下の URL を追加してください：
    ```
    https://ryu2012.github.io/lumigeo-support/apps.json
    ```
-2. ソース一覧に追加された「LumiGeo」を選択してインストールしてください。
+3. ソース一覧に追加された「LumiGeo」を選択してインストールを実行します。
 
 ### 主な特徴
 - **自動再接続 & バックグラウンド同期**:
@@ -62,11 +63,12 @@ iPhone をポケットやバッグに入れたまま、カメラの電源を入�
 Keep your iPhone in your pocket or camera bag; simply turn on your camera, and LumiGeo automatically connects and writes accurate geotags to your photos.
 
 ### Installation (AltStore / SideStore)
-1. Tap the badge above on your iOS device, or open AltStore / SideStore, navigate to **Sources**, and tap **+** to add this repository:
+1. **One-Tap Install**: Open the [LumiGeo Official Website](https://ryu2012.github.io/lumigeo-support/) in Safari on your iPhone and tap either badge to automatically launch the app and open the Add Source sheet. (GitHub's markdown sanitizer blocks custom URL schemes in README links).
+2. **Manual Add**: Open AltStore or SideStore, navigate to **Sources**, and tap **+** to add this repository:
    ```
    https://ryu2012.github.io/lumigeo-support/apps.json
    ```
-2. Locate **LumiGeo** in the sources list and tap Install.
+3. Locate **LumiGeo** in the sources list and tap Install.
 
 ### Key Features
 - **Automatic Background Reconnection**:
