@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LumiGeo - Privacy Policy</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5KGGS291NJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-5KGGS291NJ');
+    </script>
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -156,7 +165,7 @@
             <div class="back-nav"><a href="index.html">← Support Home</a></div>
             <div class="logo-badge">LumiGeo</div>
             <h1>Privacy Policy</h1>
-            <p class="subtitle" id="last-updated">最終改定日: 2026年9月8日</p>
+            <p class="subtitle" id="last-updated">最終改定日: 2026年10月10日</p>
             <div class="lang-switch" role="group" aria-label="言語選択 / Language Selection">
                 <button class="lang-btn active" id="btn-ja" aria-pressed="true" onclick="setLang('ja')">日本語</button>
                 <button class="lang-btn" id="btn-en" aria-pressed="false" onclick="setLang('en')">English</button>
@@ -191,7 +200,7 @@
                     <li>位置情報はメモリ上でのみ処理され、端末ストレージ内に移動ログや軌跡データとして保存されることもありません。</li>
                 </ul>
 
-                <h2>4. サードパーティ製 SDK・広告・トラッキング</h2>
+                <h2>4. アプリ本体のサードパーティ製 SDK・広告・トラッキング</h2>
                 <ul>
                     <li>当アプリには、広告配信 SDK、行動分析・アナリティクスツール（Google Analytics, Firebase 等）、クラッシュ解析ツールなどのサードパーティ製ライブラリは<strong>一切組み込まれていません</strong>。</li>
                     <li>広告識別子（IDFA）の取得や、他社アプリをまたいだユーザーの追跡（トラッキング）は行いません。</li>
@@ -206,7 +215,17 @@
 
                 <h2>7. お問い合わせ</h2>
                 <p>プライバシーポリシーに関するご質問やお問い合わせは、以下のサポート窓口よりご連絡ください：</p>
-                <p><a href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank">LumiGeo Support (GitHub Issues)</a></p>
+                <p><a href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank" rel="noopener noreferrer">LumiGeo Support (GitHub Issues)</a></p>
+
+                <h2>8. サポートウェブサイトにおけるアクセス解析 (Google Analytics)</h2>
+                <p>当サポートサイト（https://ryu2012.github.io/lumigeo-support/）では、サイト利用状況の把握やアクセシビリティ・導線の向上のため、Google社のアクセス解析ツール「Google Analytics」を利用しています。</p>
+                <ul>
+                    <li>Google Analytics はデータの収集のために Cookie を使用します。</li>
+                    <li>収集されるトラフィックデータは匿名化されており、個人を特定する情報は含まれません。</li>
+                    <li>利用者はブラウザの Cookie を無効に設定することで、データ収集を拒否することが可能です。</li>
+                    <li>Google Analytics のデータ収集および処理の仕組みについての詳細は、<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Google のポリシーと規約</a>をご確認ください。</li>
+                </ul>
+                <p style="margin-top: 8px;"><strong>※ iOS アプリ本体との区別について:</strong> LumiGeo アプリ本体には Google Analytics や広告配信等の外部通信ライブラリは一切組み込まれておらず、位置情報やカメラ識別情報の収集・外部送信は行われません。</p>
             </div>
         </div>
 
@@ -238,7 +257,7 @@
                     <li>GPS coordinates are handled transiently in memory and are discarded immediately after transmission to your camera. No historical track logs are recorded to disk.</li>
                 </ul>
 
-                <h2>4. Third-Party Analytics and Advertising</h2>
+                <h2>4. App Third-Party Analytics and Advertising</h2>
                 <ul>
                     <li>The App contains <strong>no advertising SDKs, no tracking frameworks, and no third-party analytics services</strong> (such as Firebase or Google Analytics).</li>
                     <li>The App does not access the Advertising Identifier (IDFA) and never tracks users across other apps or websites.</li>
@@ -253,7 +272,17 @@
 
                 <h2>7. Contact Information</h2>
                 <p>If you have any questions regarding this Privacy Policy, please contact us at:</p>
-                <p><a href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank">LumiGeo Support (GitHub Issues)</a></p>
+                <p><a href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank" rel="noopener noreferrer">LumiGeo Support (GitHub Issues)</a></p>
+
+                <h2>8. Website Analytics (Google Analytics)</h2>
+                <p>This support website (https://ryu2012.github.io/lumigeo-support/) uses Google Analytics, a web analytics service provided by Google LLC, to measure website traffic and improve usability.</p>
+                <ul>
+                    <li>Google Analytics uses cookies to collect anonymous usage and traffic data.</li>
+                    <li>All collected data is anonymized and does not contain any personally identifiable information.</li>
+                    <li>You can disable cookies through your browser settings to decline data collection.</li>
+                    <li>For more information on how Google collects and processes data, please visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use our services</a>.</li>
+                </ul>
+                <p style="margin-top: 8px;"><strong>Note regarding the iOS App:</strong> The LumiGeo iOS application itself does NOT contain Google Analytics, advertising SDKs, or any telemetry frameworks. All camera communications and GPS data stay strictly local on your device.</p>
             </div>
         </div>
 
@@ -274,7 +303,7 @@
             if (lang === 'ja') {
                 jaContent.style.display = 'block';
                 enContent.style.display = 'none';
-                lastUpdated.textContent = '最終改定日: 2026年9月8日';
+                lastUpdated.textContent = '最終改定日: 2026年10月10日';
                 document.documentElement.lang = 'ja';
                 btnJa.classList.add('active');
                 btnJa.setAttribute('aria-pressed', 'true');
@@ -283,12 +312,18 @@
             } else {
                 jaContent.style.display = 'none';
                 enContent.style.display = 'block';
-                lastUpdated.textContent = 'Last updated: September 8, 2026';
+                lastUpdated.textContent = 'Last updated: October 10, 2026';
                 document.documentElement.lang = 'en';
                 btnJa.classList.remove('active');
                 btnJa.setAttribute('aria-pressed', 'false');
                 btnEn.classList.add('active');
                 btnEn.setAttribute('aria-pressed', 'true');
+            }
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'switch_language', {
+                    selected_language: lang
+                });
             }
         }
     </script>

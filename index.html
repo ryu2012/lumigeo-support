@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LumiGeo - Panasonic LUMIX GPS Geotagging App</title>
     <link rel="icon" type="image/png" href="icon.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5KGGS291NJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-5KGGS291NJ');
+    </script>
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -362,10 +371,10 @@
                 <p style="margin-top: 6px;">iPhone の Safari などから以下の公式バッジをタップすると、各アプリが起動してソース追加シートが開きます。</p>
 
                 <div class="install-badges">
-                    <a class="badge-link" href="altstore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="AltStore でダウンロード">
+                    <a class="badge-link" href="altstore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="AltStore でダウンロード" onclick="trackInstallClick('altstore')">
                         <img src="assets/download-badge-altstore-dark.png" alt="Download on AltStore" class="badge-img" height="48">
                     </a>
-                    <a class="badge-link" href="sidestore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="SideStore にソースを追加">
+                    <a class="badge-link" href="sidestore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="SideStore にソースを追加" onclick="trackInstallClick('sidestore')">
                         <img src="assets/add-source-to-sidestore.png" alt="Add Source to SideStore" class="badge-img" height="48">
                     </a>
                 </div>
@@ -405,7 +414,7 @@
                 <h2 id="heading-support-ja">サポート・お問い合わせ</h2>
                 <p>アプリの不具合報告、ご要望、使い方に関するご質問は、GitHub の Issues ページより受け付けております。</p>
                 <div style="margin-top: 14px;">
-                    <a class="btn-link" href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank" rel="noopener noreferrer">
+                    <a class="btn-link" href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank" rel="noopener noreferrer" onclick="trackSupportClick('github_issues')">
                         <span>Issues で質問・要望・不具合を報告</span>
                         <svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
                         <span class="sr-only">（新しいタブで開きます）</span>
@@ -455,10 +464,10 @@
                 <p style="margin-top: 6px;">Tap one of the official badges below from Safari on your iPhone to open the source installation sheet:</p>
 
                 <div class="install-badges">
-                    <a class="badge-link" href="altstore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="Download on AltStore">
+                    <a class="badge-link" href="altstore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="Download on AltStore" onclick="trackInstallClick('altstore')">
                         <img src="assets/download-badge-altstore-dark.png" alt="Download on AltStore" class="badge-img" height="48">
                     </a>
-                    <a class="badge-link" href="sidestore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="Add Source to SideStore">
+                    <a class="badge-link" href="sidestore://source?url=https://ryu2012.github.io/lumigeo-support/apps.json" aria-label="Add Source to SideStore" onclick="trackInstallClick('sidestore')">
                         <img src="assets/add-source-to-sidestore.png" alt="Add Source to SideStore" class="badge-img" height="48">
                     </a>
                 </div>
@@ -498,7 +507,7 @@
                 <h2 id="heading-support-en">Support & Feedback</h2>
                 <p>If you encounter any issues, have feature suggestions, or need assistance, please submit an issue on our GitHub Support page:</p>
                 <div style="margin-top: 14px;">
-                    <a class="btn-link" href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank" rel="noopener noreferrer">
+                    <a class="btn-link" href="https://github.com/ryu2012/lumigeo-support/issues" target="_blank" rel="noopener noreferrer" onclick="trackSupportClick('github_issues')">
                         <span>Open an Issue on GitHub</span>
                         <svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
                         <span class="sr-only">(Opens in a new tab)</span>
@@ -545,6 +554,30 @@
                 btnEn.classList.add('active');
                 btnEn.setAttribute('aria-pressed', 'true');
             }
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'switch_language', {
+                    selected_language: lang
+                });
+            }
+        }
+
+        function trackInstallClick(platform) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'install_click', {
+                    event_category: 'installation',
+                    platform: platform
+                });
+            }
+        }
+
+        function trackSupportClick(target) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'support_click', {
+                    event_category: 'support',
+                    target: target
+                });
+            }
         }
 
         function copySourceUrl(inputId, btn) {
@@ -554,6 +587,13 @@
             const originalText = btn.textContent;
             const isJa = document.documentElement.lang === 'ja';
             const feedbackText = isJa ? 'コピー完了！' : 'Copied!';
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'copy_source_url', {
+                    event_category: 'installation',
+                    event_label: 'apps_json'
+                });
+            }
 
             function showSuccess() {
                 btn.textContent = feedbackText;
